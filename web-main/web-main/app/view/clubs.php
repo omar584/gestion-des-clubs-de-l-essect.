@@ -23,13 +23,24 @@ $clubs = $clubController->afficherClubs();
             <p><?= htmlspecialchars($club["description"]) ?></p>
             <p>Créé le: <?= htmlspecialchars($club["date_creation"]) ?></p>
             
-            <!-- Affichage de l'image -->
-            <img src="<?= htmlspecialchars($club["image"]) ?>" alt="Logo <?= htmlspecialchars($club["nom"]) ?>" width="200">
+            <!-- Affichage de l'image avec chemin correct -->
+            <?php 
+            $imagePath = "../public/upload/" . basename($club["image"]); 
+            ?>
+            <img src="<?= htmlspecialchars($imagePath) ?>" 
+                 alt="Logo <?= htmlspecialchars($club["nom"]) ?>" 
+                 width="200">
 
             <p>
                 <a href="<?= htmlspecialchars($club["lien_facebook"]) ?>" target="_blank">Facebook</a> | 
                 <a href="<?= htmlspecialchars($club["lien_instagram"]) ?>" target="_blank">Instagram</a>
             </p>
+
+            <!-- Bouton pour voir les membres -->
+            <form action="index.php?action=vb" method="GET">
+                <input type="hidden" name="club_id" value="<?= $club["id"] ?>">
+                <button type="submit">Voir le burreau</button>
+            </form>
 
             <!-- Formulaire de postulation -->
             <form action="../public/index.php?action=postuler" method="POST" enctype="multipart/form-data">
