@@ -128,5 +128,20 @@ $topClubs = $dashboard->getTopClubs();
         <button type="submit" class="btn btn-primary">S'inscrire</button>
     </form>
 </div>
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <p class="mb-1">&copy; <?= date('Y') ?> ESSECT - Tous droits réservés.</p>
+        <p>
+            📍 <a href="https://essect.rnu.tn/" target="_blank" class="text-white text-decoration-none">Site Web</a> |
+            📘 <a href="https://www.facebook.com/share/16AxC3qTrc/" target="_blank" class="text-white text-decoration-none">Facebook</a> |
+            ☎️ <a href="tel:+21671330266" class="text-white text-decoration-none">71 330 266</a>
+        </p>
+    </div>
+</footer>
+
+
+<!-- Font Awesome pour les icônes -->
+<script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
